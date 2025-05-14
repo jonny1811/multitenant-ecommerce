@@ -1,17 +1,18 @@
 "use client";
 
+import { ListFilterIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ListFilterIcon } from "lucide-react";
+
+import { CategoriesGetManyOutput } from "@/modules/categories/types";
 
 import { CategoryDropdown } from "./category-dropdown";
 import { CategoriesSidebar } from "./categories-sidebar";
-import { CustomCategory } from "../types";
 
 interface Props {
-    data: CustomCategory[];
+    data: CategoriesGetManyOutput;
 }
 
 export const Categories = ({
@@ -62,10 +63,9 @@ export const Categories = ({
     return (
         <div className="relative w-full">
             {/* Categories sidebar */}
-            <CategoriesSidebar 
-                open={isSidebarOpen} 
+            <CategoriesSidebar
+                open={isSidebarOpen}
                 onOpenChange={setIsSidebarOpen}
-                data={data}
             />
 
             {/* Hidden div to measure all items */}
@@ -112,7 +112,7 @@ export const Categories = ({
                     >
                         View All
                         <ListFilterIcon className="ml-2" />
-                        
+
                     </Button>
                 </div>
             </div>
