@@ -5,9 +5,6 @@ import { join } from "path";
 const nextConfig: NextConfig = {
   /* config options here */
   turbopack: {
-    resolveAlias: {
-      underscore: 'lodash',
-    },
     resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json'],
   }
 };
